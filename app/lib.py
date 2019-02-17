@@ -1,10 +1,11 @@
-def bonus_per_purchase_calculation(amount, gift_card_sum,coefficent): #сколько бонусов начисляется при одной покупки
+def bonus_per_purchase_calculation(amount, gift_card_sum, coefficent):  # сколько бонусов начисляется при одной покупки
     """
     >>> bonus_per_purchase_calculation(5400, 0,100)
     500
     """
     bonus_per_purchase = (amount - gift_card_sum) // 1000 * coefficent
     return bonus_per_purchase
+
 
 def coefficent_calculation(sum_of_purchase):
     """
@@ -17,11 +18,12 @@ def coefficent_calculation(sum_of_purchase):
     """
     if sum_of_purchase <= 15_000:
         coefficent = 50
-    elif  15_000 < sum_of_purchase <= 150_000:
+    elif 15_000 < sum_of_purchase <= 150_000:
         coefficent = 70
     elif sum_of_purchase > 150_000:
         coefficent = 100
     return coefficent
+
 
 def conditions_check(gift_card, best_price, discount_shop, discount):
     """
@@ -41,20 +43,20 @@ def conditions_check(gift_card, best_price, discount_shop, discount):
     else:
         return True
 
-# def bonus_to_written_off__calculation(amount, total_bonus):
-#     """
-#     >>> bonus_to_written_off__calculation(3_000, 1_000)
-#     1000
-#     >>> bonus_to_written_off__calculation(3_000, 500)
-#     500
-#     >>> bonus_to_written_off__calculation(3_000, 5_000)
-#     1000
-#     """
-#     possible_procent_written_off = 0.3
-#     possible_amount_written_off = amount * possible_procent_written_off
-#     if possible_amount_written_off >= total_bonus:
-#         bonus_to_written_off = total_bonus
-#     else:
-#         bonus_to_written_off =  possible_amount_written_off
-#     return bonus_to_written_off
-#TODO check def bonus_to_written_off_calculation
+
+def bonus_to_written_off__calculation(amount, total_bonus):
+    """
+    >>> bonus_to_written_off__calculation(5_000, 1_500)
+    1500
+    >>> bonus_to_written_off__calculation(3_000, 500)
+    500
+    >>> bonus_to_written_off__calculation(1_001, 5_000) #doctest + ELLIPSIS
+    300.3
+    """
+    possible_procent_written_off = 0.3
+    possible_amount_written_off = float(amount * possible_procent_written_off)
+    if possible_amount_written_off >= total_bonus:
+        bonus_to_written_off = total_bonus
+    else:
+        bonus_to_written_off = possible_amount_written_off
+    return bonus_to_written_off
