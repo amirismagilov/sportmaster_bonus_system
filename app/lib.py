@@ -18,11 +18,16 @@ def coefficent_calculation(sum_of_purchase):
     """
     if sum_of_purchase <= 15_000:
         coefficent = 50
+        return coefficent
+
     elif 15_000 < sum_of_purchase <= 150_000:
         coefficent = 70
+        return coefficent
+
     elif sum_of_purchase > 150_000:
         coefficent = 100
-    return coefficent
+        return coefficent
+
 
 
 def conditions_check(gift_card, best_price, discount_shop, discount):
