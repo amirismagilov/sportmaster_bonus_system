@@ -62,6 +62,7 @@ def bonus_to_written_off__calculation(amount, total_bonus):
     possible_amount_written_off = amount * possible_procent_written_off
     if possible_amount_written_off >= total_bonus:
         bonus_to_written_off = total_bonus
+        return bonus_to_written_off
     else:
         bonus_to_written_off = possible_amount_written_off
-    return bonus_to_written_off
+        return bonus_to_written_off
